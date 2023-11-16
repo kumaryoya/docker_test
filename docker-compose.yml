@@ -18,6 +18,7 @@ services:
     # command: bash -c "rm -f tmp/pids/server.pid && bundle exec rails s -p 3000 -b '0.0.0.0'"
     volumes:
       - .:/cw_app
+      - node_modules:/cw_app/node_modules
     ports:
       - 3000:3000
     stdin_open: true
@@ -26,3 +27,4 @@ services:
       - db
 volumes:
   postgres_volume:
+  node_modules:

@@ -16,10 +16,13 @@ COPY Gemfile Gemfile.lock /cw_app/
 
 RUN bundle install
 
-COPY . /cw_app/
+COPY package.json yarn.lock /cw_app/
 
 RUN yarn install
+
 RUN yarn add daisyui
+
+COPY . /cw_app/
 
 COPY entrypoint.sh /usr/bin/
 
